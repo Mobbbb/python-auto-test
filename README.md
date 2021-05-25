@@ -22,8 +22,6 @@ pip.exe install selenium
 pip.exe install -U pytest pytest-cov pytest-forked pytest-html pytest-metadata pytest-repeat pytest-rerunfailures pytest-xdist python-dateutil
 ```
 
-下面依赖和cv相关可以不用下载
-
 * [scikit-image](https://scikit-image.org/download.html)
 
 ```
@@ -59,55 +57,42 @@ usage: main.py [-h] [--headless {0,1}] [-t {mobile,pc}]
            [--reruns RERUNS] [--mock MOCK]
 
 optional arguments:
-  -h, --help            show this help message and exit
-  --headless {0,1}      0: 后台运行浏览器, 1: 前台运行浏览器
-  -t {mobile,pc}, --type {mobile,pc}
-                        mobile: 运行模拟手机浏览器用例, pc: 运行浏览器用例
-  --title TITLE
-  --script SCRIPT       指定运行的脚本
-  --testing_url TESTING_URL
-                        测试链接地址
-  --baseline_url BASELINE_URL
-                        对比链接地址, 默认不对比
-  --parallel PARALLEL   用例并行运行个数(会启动n个浏览器), 1为默认
-  --reruns RERUNS       用例失败后重跑次数, 默认不重跑
-  --mock MOCK           是否使用mock接口, 默认不使用
+  -h, --help                          show this help message and exit
+  --headless {0,1}                    0: 后台运行浏览器, 1: 前台运行浏览器
+  -t {mobile,pc}, --type {mobile,pc}  mobile: 运行模拟手机浏览器用例, pc: 运行浏览器用例
+  --title TITLE                       生成的html报告文件名
+  --script SCRIPT                     指定运行的脚本
+  --testing_url TESTING_URL           测试链接地址
+  --baseline_url BASELINE_URL         对比链接地址, 默认不对比
+  --parallel PARALLEL                 用例并行运行个数(会启动n个浏览器), 1为默认
+  --reruns RERUNS                     用例失败后重跑次数, 默认不重跑
+  --mock MOCK                         是否使用mock接口, 默认不使用
  ```
 
 ## 项目结构
 
 ```
 ├── ...
-├── cases                   # 自动化测试用例
-│   ├── mobile              # 测试用例
-├── core                    # 框架基本内容
-│   ├── ai                  # AI相关工具类: 基于opencv图片相似度比对等
-│   ├── pytest              # pytest相关
-│   ├── templates           # 用例模板
-│   ├── util                # 基础工具deprecated
-│   ├── selenium.py         # selenium工具
+├── cases                   自动化测试用例
+│   ├── mobile              测试用例
+├── core                    框架基本内容
+│   ├── ai                  AI相关工具类: 基于opencv图片相似度比对等
+│   ├── pytest              pytest相关
+│   ├── templates           用例模板
+│   ├── util                基础工具deprecated
+│   ├── selenium.py         selenium工具
 │   └── main_helper.py      
-├── conftest.py             # 框架pytest conftest, 提供pytest运行参数设置
-├── main.py                 # 入口main
-└── settings.py             # 配置文件: 环境变量, 运行路径等
+├── conftest.py             框架pytest conftest, 提供pytest运行参数设置
+├── main.py                 入口main
+└── settings.py             配置文件: 环境变量, 运行路径等
 ```
 
 ## Q&A
 
-```
-Q1: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
-```
+### Q1: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
 
-```
-A1: 问题原因，openssl版本过低或者不存在。Windows环境下：解决方法为进入 https://slproweb.com/products/Win32OpenSSL.html 链接，
-下载Win OpenSSL，下载对应位数的操作系统MSI安装即可。
-```
+### A1: 问题原因，openssl版本过低或者不存在。Windows环境下：解决方法为进入 https://slproweb.com/products/Win32OpenSSL.html 链接，下载Win OpenSSL，下载对应位数的操作系统MSI安装即可。
 
-```
-Q2: ImportError: DLL load failed while importing etree: 找不到指定的模块。
-```
+### Q2: ImportError: DLL load failed while importing etree: 找不到指定的模块。
 
-```
-A2: 问题原因，lxml 版本与 Scrapy 版本不匹配。解决方式如下：1.卸载 lxml，2.重新安装 lxml，将会安装 lxml 的最新版本。
-命令分别为： pip uninstall lxml 、 pip install lxml
-```
+### A2: 问题原因，lxml 版本与 Scrapy 版本不匹配。解决方式如下：1.卸载 lxml，2.重新安装 lxml，将会安装 lxml 的最新版本。命令分别为： pip uninstall lxml 、 pip install lxml
