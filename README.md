@@ -1,26 +1,14 @@
 ## 如何使用
 
-### 1. 下载项目
+### 1. 安装依赖
 
-* 通过`git`命令下载
-
-```
-git clone http://172.19.81.132:8061/suwenhui/iwc_auto_test_wap.git
-```
-
-* 直接下载压缩包
-
-点击网页中下载按钮, 下载后解压
-
-### 2. 安装依赖
-
-#### 2.1 环境依赖
+#### 1.1 环境依赖
 
 * Python3.x
 * Chrome浏览器
 * ChromeDriver 下载对应Chrome浏览器的版本(`浏览器设置` -> `帮助` -> `关于Google Chrome`), 你可以在`https://npm.taobao.org/mirrors/chromedriver`下载到对应的操作系统的版本
 
-#### 2.2 python依赖
+#### 1.2 python依赖
 
 * [selenium](https://www.seleniumhq.org/docs/03_webdriver.jsp)
 
@@ -48,13 +36,13 @@ pip.exe install scikit-image
 pip.exe install opencv-python
 ```
 
-### 3. 运行
+### 2. 运行
 
-#### 3.1 设置`settings.py`
+#### 2.1 设置`settings.py`
 
 根据`settings.py`中的说明, 配置你的运行环境中的路径.
 
-#### 3.2 执行命令(在项目根路径下打开命令行)
+#### 2.2 执行命令(在项目根路径下打开命令行)
 
 下面的脚本指定了`cases/mobile`目录下的`test_helloworld.py`的脚本, 同时有1个浏览器运行用例, 失败后重跑2次
 
