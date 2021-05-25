@@ -89,10 +89,10 @@ optional arguments:
 
 ## Q&A
 
-### Q1: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
+#### Q1: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
 
-### A1: 问题原因，openssl版本过低或者不存在。Windows环境下：解决方法为进入 https://slproweb.com/products/Win32OpenSSL.html 链接，下载Win OpenSSL，下载对应位数的操作系统MSI安装即可。
+#### A1: 问题原因，openssl版本过低或者不存在。Windows环境下：解决方法为进入 https://slproweb.com/products/Win32OpenSSL.html 链接，下载Win OpenSSL，下载对应位数的操作系统MSI安装即可。
 
-### Q2: ImportError: DLL load failed while importing etree: 找不到指定的模块。
+#### Q2: ImportError: DLL load failed while importing etree: 找不到指定的模块。
 
-### A2: 问题原因，lxml 版本与 Scrapy 版本不匹配。解决方式如下：1.卸载 lxml，2.重新安装 lxml，将会安装 lxml 的最新版本。命令分别为： pip uninstall lxml 、 pip install lxml
+#### A2: 问题原因，lxml 版本与 Scrapy 版本不匹配。解决方式如下：1.卸载 lxml，2.重新安装 lxml，将会安装 lxml 的最新版本。命令分别为： pip uninstall lxml 、 pip install lxml
