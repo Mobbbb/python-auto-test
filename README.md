@@ -95,4 +95,4 @@ optional arguments:
 
 #### Q2: ImportError: DLL load failed while importing etree: 找不到指定的模块。
 
-#### A2: 问题原因，lxml 版本与 Scrapy 版本不匹配。解决方式如下：1.卸载 lxml，2.重新安装 lxml，将会安装 lxml 的最新版本。命令分别为： pip uninstall lxml 、 pip install lxml
+#### A2: 问题原因，lxml 版本与 Scrapy 版本不匹配。解决方式如下：1.卸载 lxml，2.重新安装 lxml，将会安装 lxml 的最新版本。命令分别为： ```pip uninstall lxml``` 、 ```pip install lxml```
